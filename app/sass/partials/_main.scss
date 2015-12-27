@@ -1,0 +1,46 @@
+.main {}
+
+.main > .container {
+  @extend %clearfix;
+}
+
+.breadcrumbs__list {
+  margin-bottom: 27px;
+
+  @include inlineList();
+}
+
+.breadcrumbs__item {
+  margin-left: 0.2em;
+
+  &:first-child {
+    margin-left: 0;
+  }
+
+  &:after {
+    content: ' >';
+  }
+
+  &:last-child:after {
+    content: '';
+  }
+}
+
+.breadcrumbs__link {
+  color: $color;
+  text-decoration: none;
+
+  &:hover {
+    color: #ff6600;
+    text-decoration: underline;
+  }
+}
+
+.content__title {
+  margin: 0 0 34px;
+  font-size: em(20);
+}
+
+@import "main/sidebar";
+
+@import "main/content";

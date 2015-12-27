@@ -1,0 +1,12 @@
+.info > .container {
+  @extend %clearfix;
+}
+
+.info {
+  margin-bottom: 24px;
+}
+
+.info__title {
+  font-size: em(20);
+  margin: 0 0 23px;
+}

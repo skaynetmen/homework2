@@ -1,0 +1,25 @@
+header.header
+    .container
+        .socials
+            +ulList('socials__list', 'socials__item', 'socials__link', socialsLinks)
+        .phone
+            a(href='#').phone__link +7(921)123-12-13
+        address.address ул. Маяковская 6, офис 17
+
+section.sub-header
+    .container
+        .logo
+            a(href='/').logo__link
+                img(src='img/logo.png', alt='Cooltech').logo__img
+        .search
+            form
+                .search__group
+                    input(type='text', name='search', placeholder='Что будем искать').search__input
+                    span.search__group-addon
+                        button(type='submit').search__btn Найти
+        .fast-links
+            +ulList('fast-links__list', 'fast-links__item', 'fast-links__link', fastLinks)
+
+nav.nav
+    .container
+        +ulList('nav__list', 'nav__item', 'nav__link', navLinks, 1)

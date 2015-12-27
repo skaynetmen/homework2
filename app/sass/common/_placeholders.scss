@@ -1,0 +1,27 @@
+%clearfix {
+  &:before,
+  &:after {
+    content: ' ';
+    display: table;
+  }
+
+  &:after {
+    clear: both;
+  }
+}
+
+%col {
+  float: left;
+  min-height: 1px;
+}
+
+%inline-list {
+  padding-left: 0;
+  list-style: none;
+  font-size: 0;
+}
+
+%inline-list-item {
+  display: inline-block;
+  vertical-align: top;
+}

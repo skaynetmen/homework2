@@ -1,0 +1,15 @@
+- var footerCategory = [{link: '#', text: 'Планшеты'}, {link: '#', text: 'Мобильные телефоны'}, {link: '#', text: 'Mp3 плееры'}]
+- var footerCategory2 = [{link: '#', text: 'Персональные компьютеры'}, {link: '#', text: 'Ноутбуки'}, {link: '#', text: 'Аксессуары'}, {link: '#', text: 'Бытовая техника'}]
+footer.footer
+    section.footer__inner
+        .container
+            .footer__left
+                .footer__logo
+                    img(src='img/footer-logo.png', alt='Cooltech', class='img')
+            .footer__right
+                +ulList('footer-socials__list', 'footer-socials__item', 'footer-socials__link', footerSocialsLinks)
+                +ulList('footer-category__list', 'footer-category__item', 'footer-category__link', footerCategory)
+                +ulList('footer-category2__list', 'footer-category2__item', 'footer-category2__link', footerCategory2)
+    section.footer__copyright
+        .container
+            p.copyright All right reserved. 2015. no copy allowed

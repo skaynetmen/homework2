@@ -1,0 +1,24 @@
+include mixins
+include data
+
+doctype html
+html
+    head
+        meta(charset='utf8')
+        block title
+            title Homework#2
+
+        link(rel="stylesheet", href="bower/normalize.css/normalize.css")
+        link(rel="stylesheet", href="css/main.css")
+    body
+        .wrapper
+            include ../partials/header
+
+            main.main
+                .container.clearfix
+                    block content
+
+            block info
+                include ../partials/info
+
+        include ../partials/footer

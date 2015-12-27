@@ -1,0 +1,9 @@
+.sass-cache
+.idea
+node_modules
+dist
+app/bower
+app/*.html
+app/css/*.css
+app/img/socials-*.png
+app/img/system-*.png

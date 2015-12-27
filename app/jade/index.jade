@@ -1,0 +1,17 @@
+extends common/layout
+
+block title
+    title Мобильные телефоны - Cooltech
+
+block content
+    .breadcrumbs
+        +ulList('breadcrumbs__list', 'breadcrumbs__item', 'breadcrumbs__link', [
+            {link: '/', text: 'Главная'},
+            {link: '#', text: 'Каталог'}
+        ])
+
+    h1.content__title Мобильные телефоны
+
+    include partials/main/sidebar
+
+    include partials/main/content

@@ -1,0 +1,30 @@
+@mixin get-sprite($map, $icon) {
+  $sprite-image: sprite-file($map, $icon);
+  $sprite-url: sprite-url($map);
+  $sprite-position: sprite-position($map, $icon);
+
+  background: $sprite-url $sprite-position no-repeat;
+
+  $sprite-height: image-height($sprite-image);
+  $sprite-width: image-width($sprite-image);
+
+  width: $sprite-width;
+  height: $sprite-height;
+}
+
+@mixin inlineList($fontSize: $font-size) {
+  @extend %inline-list;
+
+  $class: class-name(&);
+  @at-root #{str-replace('__list', '', $class)}__item {
+    @extend %inline-list-item;
+
+    font-size: $fontSize;
+  }
+}
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}

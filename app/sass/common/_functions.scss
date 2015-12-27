@@ -1,0 +1,22 @@
+@function str-replace($search, $replace, $string) {
+  @if (type_of($string) != 'string') {
+    @warn "Is not a string.";
+    @return $string;
+  }
+
+  $index: str-index($string, $search);
+
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace + str-replace($search, $replace, str-slice($string, $index + str-length($search)));
+  }
+
+  @return $string;
+}
+
+@function class-name($class) {
+  @return "#{$class}";
+}
+
+@function em($pixels, $context: $font-size-context) {
+  @return #{$pixels/$context}em;
+}

@@ -1,0 +1,15 @@
+mixin ulList(listClass, itemClass, linkClass, items, indexActive)
+    ul(class=listClass)
+        each item, index in items
+            if index == indexActive
+                li(class=itemClass + ' ' + itemClass + '_active')
+                    if item.className
+                        a(href=item.link, class=linkClass + ' ' + item.className) !{item.text}
+                    else
+                        a(href=item.link, class=linkClass) !{item.text}
+            else
+                li(class=itemClass)
+                    if item.className
+                        a(href=item.link, class=linkClass + ' ' + item.className) !{item.text}
+                    else
+                        a(href=item.link, class=linkClass) !{item.text}
