@@ -4,9 +4,11 @@
   @extend %clearfix;
 }
 
-.breadcrumbs__list {
-  margin-bottom: 27px;
+.breadcrumbs {
+  margin-bottom: 20px;
+}
 
+.breadcrumbs__list {
   @include inlineList();
 }
 
@@ -37,7 +39,8 @@
 }
 
 .content__title {
-  margin: 0 0 34px;
+  margin: 0 0 28px;
+  font-family: 'open_sansbold', 'Open Sans Bold', sans-serif;
   font-size: em(20);
 }
 

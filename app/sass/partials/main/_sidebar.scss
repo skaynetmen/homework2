@@ -4,7 +4,7 @@
 }
 
 .sidebar__section {
-  margin-bottom: 38px;
+  margin-bottom: 37px;
 }
 
 .category, .filters, .sidebar__list {
@@ -14,7 +14,7 @@
 
 .category__link {
   display: block;
-  padding: 17px 29px;
+  padding: 13px 28px;
   background-color: #fbfbfb;
   border: 1px solid $border-color;
   border-top-width: 0;
@@ -44,15 +44,16 @@
 }
 
 .filters__item {
-  padding: 17px 29px;
+  padding: 13px 29px;
   background-color: #fbfbfb;
   border: 1px solid $border-color;
   border-top-width: 0;
 }
 
 .filters_title {
+  font-family: 'open_sanssemibold', 'Open Sans Semibold', sans-serif;
   font-size: em(16);
-  margin: 0 0 21px;
+  margin: 0 0 15px;
 }
 
 .sidebar__list {
@@ -60,14 +61,15 @@
 }
 
 .sidebar__list:last-child {
-  margin-bottom: 0;
+  margin-bottom: 6px;
 }
 
 .sidebar__item {
   position: relative;
-  margin-bottom: 18px;
+  margin-bottom: 17px;
   padding-left: 29px;
   line-height: 19px;
+
 
   &:last-child {
     margin-bottom: 0;
@@ -146,6 +148,8 @@
 }
 
 .filters__reset {
+  display: block;
+  margin-bottom: 4px;
   color: #5db2fc;
 }
 
@@ -202,6 +206,7 @@ $color-margin: 22px;
   max-width: 214px + $color-margin;
   @include inlineList(0);
   margin-left: -$color-margin;
+  margin-bottom: -17px;
 }
 
 .color__item {
@@ -215,6 +220,11 @@ $color-margin: 22px;
   width: 37px;
   height: 37px;
   border: 1px solid $border-color;
+  cursor: pointer;
+
+  &:hover {
+    opacity: .7;
+  }
 }
 
 .sidebar__checkbox:checked ~ .color__label {

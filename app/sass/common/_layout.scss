@@ -1,5 +1,6 @@
 body {
   background-color: #f4f4f4;
+  font-family: 'open_sansregular', 'Open Sans Regular', sans-serif;
   font-size: $font-size;
   color: $color;
 }
@@ -40,5 +41,11 @@ body {
 }
 
 .paragraph {
-  text-indent: 2em;
+  text-indent: 2.5em;
+  line-height: 1.45;
+  margin-bottom: 20px;
+}
+
+.isAwesome {
+  font-family: 'FontAwesome';
 }

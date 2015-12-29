@@ -18,7 +18,7 @@ section.content
                             .position-img
                                 img(src='uploads/catalog/samsung.jpg', alt='samsung', class='img')
                             ul.position-img__list
-                                li.position-img__item
+                                li.position-img__item.position-img__item_active
                                     img(src='uploads/catalog/samsung_1.jpg', alt='samsung', class='img')
                                 li.position-img__item
                                     img(src='uploads/catalog/samsung_2.jpg', alt='samsung', class='img')
@@ -68,3 +68,15 @@ section.content
                                 a(href='#', class='position__footer-cart-btn') В корзину
 
                 - i++
+
+        .pagination
+            -
+                var
+                paginationList = [
+                {link: '#', text: '&#xf104;', className: 'isAwesome'},
+                {link: '#', text: '1'},
+                {link: '#', text: '2'},
+                {link: '#', text: '3'},
+                {link: '#', text: '&#xf105;', className: 'isAwesome'}
+                ]
+            +ulList('pagination__list', 'pagination__item', 'pagination__link', paginationList, 1)

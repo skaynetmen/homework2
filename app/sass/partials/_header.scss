@@ -1,5 +1,5 @@
 .header {
-  height: 79px;
+  height: 80px;
   min-width: 1100px;
   padding: 25px 0;
   background-color: #ffffff;
@@ -52,18 +52,17 @@
   }
 }
 
-.socials__link_facebook:before {
-  @include get-sprite($socials-sprite, 'facebook');
-}
+@each $social in facebook, vk, twitter {
+  .socials__link_#{$social} {
+    &:before {
+      @include get-sprite($socials-sprite, '#{$social}');
+    }
 
-.socials__link_vk:before {
-  @include get-sprite($socials-sprite, 'vk');
+    &:hover:before {
+      @include get-sprite($socials-sprite, '#{$social}-hover');
+    }
+  }
 }
-
-.socials__link_twitter:before {
-  @include get-sprite($socials-sprite, 'twitter');
-}
-
 
 
 
@@ -88,6 +87,7 @@
 
 .phone {
   margin-left: 87px;
+  font-family: 'open_sanssemibold', 'Open Sans Semibold', sans-serif;
   font-size: em(18, 16);
 
   &:before {
@@ -95,7 +95,7 @@
 
     content: ' ';
     display: inline-block;
-    margin-bottom: -2px;
+    margin-bottom: -3px;
     padding-right: 9px;
   }
 }
@@ -128,11 +128,11 @@
 }
 
 .search, .fast-links {
-  margin-left: 50px;
+  margin-left: 48px;
 }
 
 .search {
-  width: 366px;
+  width: 368px;
 }
 
 .search__group {
@@ -162,7 +162,7 @@
 
 .search__btn {
   height: 34px;
-  padding: 0 10px;
+  padding: 0 18px;
   border: 0;
   @include border-radius(0 4px 4px 0);
 
@@ -172,7 +172,16 @@
   background: linear-gradient(to bottom,  #ff6600 0%,#ff6a1b 45%,#ff6e35 99%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff6600', endColorstr='#ff6e35',GradientType=0 );
 
+  font-family: 'open_sanssemibold', 'Open Sans Semibold', sans-serif;
   color: #ffffff;
+
+  &:hover {
+    background: lighten(#ff6600, 10%);
+  }
+
+  &:active {
+    background: darken(#ff6600, 3%);
+  }
 }
 
 .fast-links {
@@ -182,12 +191,13 @@
 .fast-links__list {
   @include inlineList(16px);
   //margin-left: -33px;
+  font-family: 'open_sanssemibold', 'Open Sans Semibold', sans-serif;
   color: $color;
   text-align: right;
 }
 
 .fast-links__item {
-  margin-left: 33px;
+  margin-left: 32px;
 
   &:first-child {
     margin-left: 0;
@@ -208,11 +218,11 @@
 .nav {
   height: 54px;
   min-width: 1100px;
-  margin-bottom: 32px;
+  margin-bottom: 27px;
   background-color: #ffffff;
   border-bottom: 2px solid #ebedef;
 
-  line-height: 54px;
+  line-height: 52px;
 }
 
 .nav__list {
