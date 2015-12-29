@@ -4,7 +4,7 @@ aside.sidebar
 
     .sidebar__section
         ul.filters
-            li.filters__item
+            li.filters__item.filters__item_active
                 h4.filters_title Наличие в магазинах
                 .filters__inner
                     ul.sidebar__list
@@ -15,7 +15,7 @@ aside.sidebar
                             input(type='radio', id='shop_2', name='shop').sidebar__radio
                             label(for='shop_2', class='sidebar__label sidebar__label_radio') В ближайшем ко мне магазине
 
-            li.filters__item
+            li.filters__item.filters__item_active
                 h4.filters_title Бренды
                 .filters__inner
                     ul.sidebar__list
@@ -37,7 +37,7 @@ aside.sidebar
 
                     a(href='#').filters__reset Сбросить фильтр
 
-            li.filters__item
+            li.filters__item.filters__item_active
                 h4.filters_title Цена
                 .filters__inner
                     .price
@@ -49,7 +49,7 @@ aside.sidebar
                         .price__slider
                             .price__slider-range
 
-            li.filters__item
+            li.filters__item.filters__item_active
                 h4.filters_title Цвет
                 .filters__inner
                     ul.color__list
@@ -90,7 +90,7 @@ aside.sidebar
                             input(type='checkbox', id='color_12', name='color[custom]').sidebar__checkbox
                             label(for='color_12', class='color__label color__label_brown')
 
-            li.filters__item
+            li.filters__item.filters__item_active
                 h4.filters_title Операционные системы
                 .filters__inner
                     ul.sidebar__list

@@ -1,0 +1,99 @@
+.catalog_teil {
+  //Каталог
+  $position-margin: 19px;
+  margin-left: -$position-margin;
+
+  .catalog__list {
+    @include inlineList($font-size);
+  }
+
+  .catalog__item {
+    margin-left: $position-margin;
+    margin-bottom: $position-margin - 1;
+  }
+
+  .position {
+    width: 235px;
+    padding: 19px 10px;
+    @include border-radius($border-radius);
+
+    &:hover {
+      box-shadow: 0 1px 7.2px 0.8px rgba(153, 153, 153, 0.75);
+    }
+  }
+
+  .position__header {
+    margin: 0 auto;
+    float: none;
+  }
+
+  .position__code {
+    display: none;
+  }
+
+  .position__body {
+
+  }
+
+  .position__title {
+    //height: 3em;
+    font-size: 1em;
+    text-align: center;
+  }
+
+  .position__desc {
+    display: none;
+  }
+
+  .position__list {
+    display: block;
+    padding-left: 0;
+    margin-bottom: 7px;
+    list-style: none;
+  }
+
+  .position__item {
+    @extend %clearfix;
+
+    padding: 3px 3px;
+    line-height: 1;
+  }
+
+  .position__item:nth-child(odd) {
+    background-color: #e6e6e6;
+  }
+
+  .position__param {
+    float: right;
+  }
+
+  .position__rating {
+    margin-bottom: 3px;
+    text-align: center;
+  }
+
+  .position__price {
+    text-align: center;
+  }
+
+  .position__action {
+    @extend %clearfix;
+  }
+
+  .position__action-status,
+  .position__action-cart {
+    width: 50%;
+  }
+
+  .position__action-status {
+    float: left;
+  }
+
+  .position__action-cart {
+    float: right;
+  }
+
+  .position__action-cart {
+    text-align: right;
+  }
+}

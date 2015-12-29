@@ -8,64 +8,74 @@ section.content
             span.view__label Вид каталога
             +ulList('view-type__list', 'view-type__item', 'view-type__link', viewLinks, 1)
 
-    .catalog
+    .catalog.catalog_teil
         ul.catalog__list
             - var i = 0;
             while i <= 8
                 li.catalog__item
                     .position
-                        .position__imgs
-                            .position-img
-                                img(src='uploads/catalog/samsung.jpg', alt='samsung', class='img')
-                            ul.position-img__list
-                                li.position-img__item.position-img__item_active
-                                    img(src='uploads/catalog/samsung_1.jpg', alt='samsung', class='img')
-                                li.position-img__item
-                                    img(src='uploads/catalog/samsung_2.jpg', alt='samsung', class='img')
-                                li.position-img__item
-                                    img(src='uploads/catalog/samsung_3.jpg', alt='samsung', class='img')
-                        h4.position__title Samsung GT-I9391I Galaxy S3
-                            a(href='#', class='position__link')
-                        ul.position__list
-                            li.position__item
-                                | Тип SIM-карты
-                                span.position__param Micro-SIM
-                            li.position__item
-                                | Количество SIM-карт
-                                span.position__param 1
-                            li.position__item
-                                | Цвет
-                                span.position__param Белый
-                            li.position__item
-                                | ОС
-                                span.position__param Android
-                            li.position__item
-                                | Связь 3G
-                                span.position__param Есть
-                            li.position__item
-                                | 4G (LTE)
-                                span.position__param Нет
-                            li.position__item
-                                | GPS-модуль
-                                span.position__param Есть
-                        .position__rating
-                            ul.position__rating-stars__list
-                                li.position__rating-stars__item.position__rating-stars__item_active
-                                    a(href='#', class='position__rating-stars__link') *
-                                li.position__rating-stars__item.position__rating-stars__item_active
-                                    a(href='#', class='position__rating-stars__link') *
-                                li.position__rating-stars__item.position__rating-stars__item_active
-                                    a(href='#', class='position__rating-stars__link') *
-                                li.position__rating-stars__item.position__rating-stars__item_active
-                                    a(href='#', class='position__rating-stars__link') *
-                                li.position__rating-stars__item
-                                    a(href='#', class='position__rating-stars__link') *
-                            span.position__rating-value 4
-                        span.position__price 10 990
+                        .position__header
+                            .position__imgs
+                                .position-img
+                                    img(src='uploads/catalog/samsung.jpg', alt='samsung', class='img')
+                                ul.position-img__list
+                                    li.position-img__item.position-img__item_active
+                                        img(src='uploads/catalog/samsung_1.jpg', alt='samsung', class='img')
+                                    li.position-img__item
+                                        img(src='uploads/catalog/samsung_2.jpg', alt='samsung', class='img')
+                                    li.position-img__item
+                                        img(src='uploads/catalog/samsung_3.jpg', alt='samsung', class='img')
+                            .position__code Артикул
+                                span.position__code-value 189238
+
+                        .position__body
+                            h4.position__title
+                                a(href='#', class='position__link') Samsung GT-I9391I Galaxy S3
+                            p.position__desc Смартфон Samsung GT-I9301I GALAXY S 3 Ceramic White Моноблок, Micro-SIM, Android 4.4, 3G, Bluetooth 4.0, EDGE, GPRS, WAP, Wi-Fi, Количество ядер процессора 4, Частота процессора 1400 МГц...
+
+                            ul.position__list
+                                li.position__item
+                                    | Тип SIM-карты
+                                    span.position__param Micro-SIM
+                                li.position__item
+                                    | Количество SIM-карт
+                                    span.position__param 1
+                                li.position__item
+                                    | Цвет
+                                    span.position__param Белый
+                                li.position__item
+                                    | ОС
+                                    span.position__param Android
+                                li.position__item
+                                    | Связь 3G
+                                    span.position__param Есть
+                                li.position__item
+                                    | 4G (LTE)
+                                    span.position__param Нет
+                                li.position__item
+                                    | GPS-модуль
+                                    span.position__param Есть
+
+                            .position__rating
+                                ul.position__rating-stars__list
+                                    li.position__rating-stars__item.position__rating-stars__item_active
+                                        a(href='#', class='position__rating-stars__link') *
+                                    li.position__rating-stars__item.position__rating-stars__item_active
+                                        a(href='#', class='position__rating-stars__link') *
+                                    li.position__rating-stars__item.position__rating-stars__item_active
+                                        a(href='#', class='position__rating-stars__link') *
+                                    li.position__rating-stars__item.position__rating-stars__item_active
+                                        a(href='#', class='position__rating-stars__link') *
+                                    li.position__rating-stars__item
+                                        a(href='#', class='position__rating-stars__link') *
+                                span.position__rating-value 4
+
                         .position__footer
-                            .position__footer-status.position__footer-status_active В наличии
-                            .position__footer-cart
-                                a(href='#', class='position__footer-cart-btn') В корзину
+                            span.position__price 10 990
+                            .position__action
+                                .position__action-cart
+                                    a(href='#', class='position__action-cart-btn') В корзину
+                                .position__action-status.position__action-status_active В наличии
 
                 - i++
 

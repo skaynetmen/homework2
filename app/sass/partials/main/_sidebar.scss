@@ -44,17 +44,60 @@
 }
 
 .filters__item {
+  position: relative;
   padding: 13px 29px;
   background-color: #fbfbfb;
   border: 1px solid $border-color;
   border-top-width: 0;
+
+  &:hover {
+    background-color: #d9e5ea;
+  }
+}
+
+.filters__item_active {
+  &:hover {
+    background-color: #fbfbfb;
+  }
+}
+
+.filters__inner {
+  display: none;
+}
+
+.filters__item_active > .filters__inner {
+  display: block;
 }
 
 .filters_title {
   font-family: 'open_sanssemibold', 'Open Sans Semibold', sans-serif;
-  font-size: em(16);
-  margin: 0 0 15px;
+  font-size: em(14);
+  margin: 0;
+  cursor: pointer;
+
+  &:hover:after {
+    position: absolute;
+    content: '';
+    display: block;
+    top: 18px;
+    right: 12px;
+    @include get-sprite($system-sprite, 'filters-open');
+  }
 }
+
+.filters__item_active > .filters_title {
+  font-size: em(16);
+  margin-bottom: 15px;
+
+  &:hover:after {
+    @include get-sprite($system-sprite, 'filters-close');
+  }
+}
+
+//некрасиво
+//.filters__item:hover > .filters_title {
+//  font-size: em(16);
+//}
 
 .sidebar__list {
   margin-bottom: 17px;
