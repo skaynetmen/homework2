@@ -68,6 +68,16 @@ var APP = (function ($) {
         });
     };
 
+    var selector = function () {
+        $('.view-sort__btn').on('click', function () {
+            var $that = $(this);
+
+            $that
+                .closest('.view-sort__selector')
+                .toggleClass('view-sort__selector_active');
+        });
+    };
+
 
     return {
         init: function () {
@@ -75,6 +85,7 @@ var APP = (function ($) {
             resetFilter();
             filters();
             thumbnail();
+            selector();
         }
     };
 })(jQuery);
