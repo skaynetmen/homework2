@@ -2,8 +2,13 @@ section.content
     .view
         .view-sort
             span.view__label Сортировать по
-            select(name='sort', class='input__select')
-                option По цене
+            .view-sort__selector
+                select(name='sort', class='view-sort__select')
+                    option По цене
+                .view-sort__btn по цене
+                - var selectList = [{link: '#', text: 'по цене'}, {link: '#', text: 'по наличию'}]
+                +ulList('view-sort__list', 'view-sort__item', 'view-sort__link', selectList)
+
         .view-type
             span.view__label Вид каталога
             +ulList('view-type__list', 'view-type__item', 'view-type__link', viewLinks, 1)
