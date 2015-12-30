@@ -49,12 +49,32 @@ var APP = (function ($) {
         });
     };
 
+    var thumbnail = function () {
+        $('.position-img__link').on('click', function (e) {
+            e.preventDefault();
+
+            var $that = $(this);
+
+            $that
+                .closest('.position-img__item')
+                .addClass('position-img__item_active')
+                .siblings()
+                .removeClass('position-img__item_active');
+
+            $that
+                .closest('.position__imgs')
+                .find('.position-img .img')
+                .attr('src', $that.attr('href'));
+        });
+    };
+
 
     return {
         init: function () {
             changeView();
             resetFilter();
             filters();
+            thumbnail();
         }
     };
 })(jQuery);
