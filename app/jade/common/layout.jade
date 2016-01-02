@@ -28,6 +28,7 @@ html(class='no-js', lang='ru-RU')
         link(rel="icon", type='image/png', sizes="16x16", href="favicon.png")
         //build:css main.min.css
         link(rel="stylesheet", href="bower/normalize.css/normalize.css")
+        link(rel="stylesheet", href="bower/select2/dist/css/select2.min.css")
         link(rel="stylesheet", href="css/main.css")
         //endbuild
     body
@@ -35,7 +36,7 @@ html(class='no-js', lang='ru-RU')
             include ../partials/header
 
             main.main
-                .container.clearfix
+                .container
                     block content
 
             block info
@@ -45,5 +46,11 @@ html(class='no-js', lang='ru-RU')
 
         //build:js main.min.js
         script(src='bower/jquery/dist/jquery.min.js')
+        script(src='bower/select2/dist/js/select2.min.js')
+        script(src='bower/jquery-ui/ui/core.js')
+        script(src='bower/jquery-ui/ui/widget.js')
+        script(src='bower/jquery-ui/ui/mouse.js')
+        script(src='bower/jquery-ui/ui/slider.js')
+        script(src='bower/jquery.columnizer/src/jquery.columnizer.min.js')
         script(src='js/main.js')
         //endbuild

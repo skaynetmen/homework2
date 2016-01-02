@@ -5,9 +5,11 @@ section.content
             .view-sort__selector
                 select(name='sort', class='view-sort__select')
                     option По цене
-                .view-sort__btn по цене
-                - var selectList = [{link: '#', text: 'по цене'}, {link: '#', text: 'по наличию'}]
-                +ulList('view-sort__list', 'view-sort__item', 'view-sort__link', selectList)
+                    option По наличию
+                    option По понтовости
+                //.view-sort__btn по цене
+                //- var selectList = [{link: '#', text: 'по цене'}, {link: '#', text: 'по наличию'}]
+                //+ulList('view-sort__list', 'view-sort__item', 'view-sort__link', selectList)
 
         .view-type
             span.view__label Вид каталога
@@ -28,12 +30,13 @@ section.content
                                         a(href='uploads/catalog/samsung.jpg', class='position-img__link')
                                             img(src='uploads/catalog/samsung_1.jpg', alt='samsung', class='img')
                                     li.position-img__item
-                                        a(href='uploads/catalog/samsung_2.jpg', class='position-img__link')
+                                        a(href='http://lorempixel.com/200/200/technics/', class='position-img__link')
                                             img(src='uploads/catalog/samsung_2.jpg', alt='samsung', class='img')
                                     li.position-img__item
-                                        a(href='uploads/catalog/samsung_3.jpg', class='position-img__link')
+                                        a(href='http://lorempixel.com/200/200/technics/1', class='position-img__link')
                                             img(src='uploads/catalog/samsung_3.jpg', alt='samsung', class='img')
-                            .position__code Артикул
+                            .position__code
+                                span.position__code-title Артикул
                                 span.position__code-value 189238
 
                         .position__body
@@ -79,11 +82,12 @@ section.content
                                 span.position__rating-value 4
 
                         .position__footer
-                            span.position__price 10 990
-                            .position__action
-                                .position__action-cart
-                                    a(href='#', class='position__action-cart-btn') В корзину
-                                .position__action-status.position__action-status_active В наличии
+                            .position__footer-wrapper
+                                span.position__price 10 990
+                                .position__action
+                                    .position__action-cart
+                                        a(href='#', class='position__action-cart-btn') В корзину
+                                    .position__action-status.position__action-status_active В наличии
 
                 - i++
 

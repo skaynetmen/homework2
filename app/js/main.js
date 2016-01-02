@@ -1,4 +1,8 @@
 var APP = (function ($) {
+    var
+        $priceSlider = $('.price__slider'),
+        $priceFrom = $('.price__range-input[name=price\\[from\\]]'),
+        $priceTo = $('.price__range-input[name=price\\[to\\]]');
 
     var changeView = function () {
         $('.view-type__list').on('click', '.view-type__link', function (e) {
@@ -7,6 +11,7 @@ var APP = (function ($) {
             var
                 $catalog = $('.catalog'),
                 $that = $(this),
+                $item = $that.closest('.view-type__item'),
                 classMod = '';
 
             if ($that.hasClass('view-type__link_photo-list')) {
@@ -23,6 +28,13 @@ var APP = (function ($) {
 
             if (!$catalog.hasClass(classMod)) {
                 $catalog.attr('class', 'catalog ' + classMod);
+            }
+
+            if (!$item.hasClass('view-type__item_active')) {
+                $item
+                    .addClass('view-type__item_active')
+                    .siblings()
+                    .removeClass('view-type__item_active');
             }
         });
     };
@@ -44,6 +56,11 @@ var APP = (function ($) {
         $('.filters_title').on('click', function () {
             var $that = $(this),
                 $item = $that.closest('.filters__item');
+
+            $that
+                .siblings('.filters__inner')
+                .stop(true, true)
+                .slideToggle();
 
             $item.toggleClass('filters__item_active');
         });
@@ -69,13 +86,40 @@ var APP = (function ($) {
     };
 
     var selector = function () {
-        $('.view-sort__btn').on('click', function () {
-            var $that = $(this);
+        //$('.view-sort__btn').on('click', function () {
+        //    var $that = $(this);
+        //
+        //    $that
+        //        .closest('.view-sort__selector')
+        //        .toggleClass('view-sort__selector_active');
+        //});
 
-            $that
-                .closest('.view-sort__selector')
-                .toggleClass('view-sort__selector_active');
+        $('.view-sort__select').select2({
+            minimumResultsForSearch: Infinity
         });
+    };
+
+    var columnizer = function () {
+        $('.info__text').columnize({
+            columns: 2
+        });
+    };
+
+    var slider = function () {
+        $priceSlider.slider({
+            range: true,
+            step: 1,
+            min: parseInt($priceSlider.data('min')) || 0,
+            max: parseInt($priceSlider.data('max')) || 100000,
+            values: [$priceFrom.val() || 100, $priceTo.val() || 13000],
+            slide: function (e, ui) {
+                $priceFrom.val(ui.values[0]);
+                $priceTo.val(ui.values[1]);
+            }
+        });
+
+        //$priceSlider.slider('values', 0, $priceFrom.val() || 0);
+        //$priceSlider.slider('values', 1, $priceTo.val() || 1000);
     };
 
 
@@ -86,6 +130,38 @@ var APP = (function ($) {
             filters();
             thumbnail();
             selector();
+            columnizer();
+            slider();
+        },
+        setSliderRangeMin: function (value) {
+            if (!isNaN(value)) {
+                $priceSlider.slider('option', 'min', parseInt(value));
+            }
+
+            return value;
+        },
+        setSliderRangeMax: function (value) {
+            if (!isNaN(value)) {
+                $priceSlider.slider('option', 'max', parseInt(value));
+            }
+
+            return value;
+        },
+        setSliderValueFrom: function (value) {
+            if (!isNaN(value)) {
+                $priceSlider.slider('values', 0, parseInt(value));
+                $priceFrom.val(parseInt(value));
+            }
+
+            return value;
+        },
+        setSliderValueTo: function (value) {
+            if (!isNaN(value)) {
+                $priceSlider.slider('values', 1, parseInt(value));
+                $priceTo.val(parseInt(value));
+            }
+
+            return value;
         }
     };
 })(jQuery);

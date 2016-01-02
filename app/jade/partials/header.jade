@@ -1,16 +1,19 @@
 header.header
     .container
-        .socials
-            +ulList('socials__list', 'socials__item', 'socials__link', socialsLinks)
-        .phone
-            a(href='tel:+79211231213').phone__link +7(921)123-12-13
-        address.address ул. Маяковская 6, офис 17
+        .header__left
+            .socials
+                +ulList('socials__list', 'socials__item', 'socials__link', socialsLinks)
+        .header__right
+            address.address ул. Маяковская 6, офис 17
+            .phone
+                a(href='tel:+79211231213').phone__link +7(921)123-12-13
 
 section.sub-header
     .container
         .logo
             a(href='/').logo__link
                 img(src='img/logo.png', alt='Cooltech').logo__img
+                .logo__alt(style='display: none;') Cooltech
         .search
             form
                 .search__group

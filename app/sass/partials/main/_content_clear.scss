@@ -1,7 +1,8 @@
 .catalog_clear {
 
   .position {
-    height: 51px;
+    //display: table;
+    //height: 51px;
     padding: 0 14px;
     border-top-width: 0;
     line-height: 50px;
@@ -23,10 +24,15 @@
   .position__header,
   .position__body {
     float: left;
+    display: table-cell;
+    min-width: 0;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
 
   .position__header {
-    width: 115px;
+    //width: 115px;
+    width: 17%;
   }
 
   .position__imgs,
@@ -36,9 +42,8 @@
   }
 
   .position__body {
-    width: 287px;
-    white-space: nowrap;
-    text-overflow: ellipsis;
+    //width: 287px;
+    width: 39%;
   }
 
   .position__code-value {
@@ -60,19 +65,29 @@
   }
 
   .position__footer {
-    width: 311px;
+    display: table-cell;
+    //width: 311px;
+    width: 44%;
     float: left;
     text-align: right;
 
     @extend %clearfix;
   }
 
+  .position__footer-wrapper {
+    display: table;
+    width: 100%;
+
+    @extend %clearfix;
+  }
+
   .position__price {
-    display: block;
+    display: table-cell;
     width: (100%/3);
-    float: left;
+    //float: left;
     margin-bottom: 0;
     padding-right: 10px;
+    white-space: nowrap;
 
     &:after {
       font-size: 1em;
@@ -81,8 +96,9 @@
   }
 
   .position__action {
+    display: table-cell;
     width: ((100%/3)*2);
-    float: right;
+    //float: right;
     @extend %clearfix;
   }
 
@@ -97,8 +113,11 @@
     padding-left: 10px;
     text-align: left;
 
+
     &:before {
+      position: relative;
       left: 0;
+      margin-right: 5px;
     }
   }
 
@@ -113,6 +132,6 @@
 
   .position__action-cart-btn {
     padding: 0 14px;
-    width: 100%;
+    width: auto;
   }
 }

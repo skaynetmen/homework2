@@ -15,8 +15,17 @@
   line-height: 26px;
 }
 
-.socials {
+.header__left {
   float: left;
+}
+
+.header__right {
+  float: right;
+  @extend %clearfix;
+}
+
+.socials {
+
 }
 
 .socials__list {
@@ -67,7 +76,7 @@
 
 
 .address, .phone {
-  float: right;
+  float: left;
 }
 
 .address {
@@ -81,7 +90,7 @@
     content: ' ';
     display: inline-block;
     margin-bottom: -2px;
-    padding-right: 9px;
+    margin-right: 9px;
   }
 }
 
@@ -96,7 +105,7 @@
     content: ' ';
     display: inline-block;
     margin-bottom: -3px;
-    padding-right: 9px;
+    margin-right: 9px;
   }
 }
 

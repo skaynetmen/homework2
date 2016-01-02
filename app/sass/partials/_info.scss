@@ -1,7 +1,3 @@
-.info > .container {
-  @extend %clearfix;
-}
-
 .info {
   margin-bottom: 29px;
 }
@@ -12,16 +8,20 @@
   margin: 0 0 18px;
 }
 
-.info__left,
-.info__right {
-  width: 50%;
-  float: left;
-}
+.info__text {
+  p {
+    @extend .paragraph;
+  }
 
-.info__left {
-  padding-right: 20px;
-}
+  .column {
+    padding: 0 20px;
+  }
 
-.info__right {
-  padding-left: 20px;
+  .first.column {
+    padding-left: 0;
+  }
+
+  .last.column {
+    padding-right: 0;
+  }
 }

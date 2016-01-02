@@ -6,7 +6,7 @@ aside.sidebar
         ul.filters
             li.filters__item.filters__item_active
                 h4.filters_title Наличие в магазинах
-                .filters__inner
+                .filters__inner.filters__inner_active
                     ul.sidebar__list
                         li.sidebar__item
                             input(type='radio', id='shop_1', name='shop', checked='checked').sidebar__radio
@@ -17,7 +17,7 @@ aside.sidebar
 
             li.filters__item.filters__item_active
                 h4.filters_title Бренды
-                .filters__inner
+                .filters__inner.filters__inner_active
                     ul.sidebar__list
                         li.sidebar__item
                             input(type='checkbox', id='brand_1', name='brands[lenovo]', checked='checked').sidebar__checkbox
@@ -39,19 +39,19 @@ aside.sidebar
 
             li.filters__item.filters__item_active
                 h4.filters_title Цена
-                .filters__inner
+                .filters__inner.filters__inner_active
                     .price
                         .price__range
                             .price__range-from от
-                                input(type='text', name='price[from]', class='price__range-input', value='100', placeholder='')
+                                input(type='text', name='price[from]', class='price__range-input', value='1000', placeholder='')
                             .price__range-to до
-                                input(type='text', name='price[to]', class='price__range-input', value='13000', placeholder='')
-                        .price__slider
-                            .price__slider-range
+                                input(type='text', name='price[to]', class='price__range-input', value='11000', placeholder='')
+                        .price__slider(data-min='0' data-max='29300')
+                            //.price__slider-range
 
             li.filters__item.filters__item_active
                 h4.filters_title Цвет
-                .filters__inner
+                .filters__inner.filters__inner_active
                     ul.color__list
                         li.color__item
                             input(type='checkbox', id='color_1', name='color[android]').sidebar__checkbox
@@ -92,7 +92,7 @@ aside.sidebar
 
             li.filters__item.filters__item_active
                 h4.filters_title Операционные системы
-                .filters__inner
+                .filters__inner.filters__inner_active
                     ul.sidebar__list
                         li.sidebar__item
                             input(type='checkbox', id='os_1', name='os[android]', checked='checked').sidebar__checkbox

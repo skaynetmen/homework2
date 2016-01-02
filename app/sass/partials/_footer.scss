@@ -42,6 +42,10 @@ $copyright-height: 28px;
 
 .footer-socials__item {
   margin-left: 30px;
+
+  &:first-child {
+    margin-left: 0;
+  }
 }
 
 .footer-socials__link {
@@ -89,6 +93,10 @@ $copyright-height: 28px;
 .footer-category__item,
 .footer-category2__item {
   margin-left: 27px;
+
+  &:first-child {
+    margin-left: 0;
+  }
 }
 
 .footer-category__link,
@@ -104,7 +112,7 @@ $copyright-height: 28px;
   position: absolute;
   width: 100%;
   bottom: 0;
-  height: 28px;
+  //height: 28px;
   border-top: 1px solid #494949;
 }
 
