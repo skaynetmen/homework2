@@ -2,7 +2,7 @@ header.header
     .container
         .header__left
             .socials
-                +ulList('socials__list', 'socials__item', 'socials__link', socialsLinks)
+                +list('socials', socialsLinks)
         .header__right
             address.address ул. Маяковская 6, офис 17
             .phone
@@ -15,14 +15,14 @@ section.sub-header
                 img(src='img/logo.png', alt='Cooltech').logo__img
                 .logo__alt(style='display: none;') Cooltech
         .search
-            form
-                .search__group
-                    input(type='text', name='search', placeholder='Что будем искать').search__input
-                    span.search__group-addon
-                        button(type='submit').search__btn Найти
+            form.search__form
+                .search__form-group
+                    input(type='text', name='search', placeholder='Что будем искать').search__form-input
+                    span.search__form-group-addon
+                        button(type='submit').search__form-btn Найти
         .fast-links
-            +ulList('fast-links__list', 'fast-links__item', 'fast-links__link', fastLinks)
+            +list('fast-links', fastLinks)
 
 nav.nav
     .container
-        +ulList('nav__list', 'nav__item', 'nav__link', navLinks, 1)
+        +list('nav', navLinks, '', 1)

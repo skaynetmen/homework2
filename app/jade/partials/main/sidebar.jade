@@ -1,44 +1,31 @@
 aside.sidebar
-    .sidebar__section
-        +ulList('category', 'category__item', 'category__link', [{link: '#', text: 'Флагманы'}, {link: '#', text: 'Бюджетная линейка'}], 1)
+    .sidebar__section.category
+        +list('category', ['Флагманы', 'Бюджетная линейка'], '', 1)
 
     .sidebar__section
         ul.filters
             li.filters__item.filters__item_active
-                h4.filters_title Наличие в магазинах
+                h4.filters__title Наличие в магазинах
                 .filters__inner.filters__inner_active
                     ul.sidebar__list
-                        li.sidebar__item
-                            input(type='radio', id='shop_1', name='shop', checked='checked').sidebar__radio
-                            label(for='shop_1', class='sidebar__label sidebar__label_radio') Во всех магазинах
-                        li.sidebar__item
-                            input(type='radio', id='shop_2', name='shop').sidebar__radio
-                            label(for='shop_2', class='sidebar__label sidebar__label_radio') В ближайшем ко мне магазине
+                        each item, index in ['Во всех магазинах', 'В ближайшем ко мне магазине']
+                            li.sidebar__item
+                                input(type='radio', id='shop_#{index}', name='shop', checked=index == 1).sidebar__radio
+                                label(for='shop_#{index}', class='sidebar__label sidebar__label_radio') #{item}
 
             li.filters__item.filters__item_active
-                h4.filters_title Бренды
+                h4.filters__title Бренды
                 .filters__inner.filters__inner_active
                     ul.sidebar__list
-                        li.sidebar__item
-                            input(type='checkbox', id='brand_1', name='brands[lenovo]', checked='checked').sidebar__checkbox
-                            label(for='brand_1', class='sidebar__label sidebar__label_checkbox') Lenovo
-                        li.sidebar__item
-                            input(type='checkbox', id='brand_2', name='brands[apple]', checked='checked').sidebar__checkbox
-                            label(for='brand_2', class='sidebar__label sidebar__label_checkbox') Apple
-                        li.sidebar__item
-                            input(type='checkbox', id='brand_3', name='brands[samsung]', checked='checked').sidebar__checkbox
-                            label(for='brand_3', class='sidebar__label sidebar__label_checkbox') Samsung
-                        li.sidebar__item
-                            input(type='checkbox', id='brand_4', name='brands[asus]').sidebar__checkbox
-                            label(for='brand_4', class='sidebar__label sidebar__label_checkbox') Asus
-                        li.sidebar__item
-                            input(type='checkbox', id='brand_5', name='brands[motorola]').sidebar__checkbox
-                            label(for='brand_5', class='sidebar__label sidebar__label_checkbox') Motorola
+                        each item, index in ['Lenovo', 'Apple', 'Samsung', 'Asus', 'Motorola']
+                            li.sidebar__item
+                                input(type='checkbox', id='brand_#{index}', name='brands[]', value='#{item}' checked=(index == 0 || index == 1 || index == 2)).sidebar__checkbox
+                                label(for='brand_#{index}', class='sidebar__label sidebar__label_checkbox') #{item}
 
                     a(href='#').filters__reset Сбросить фильтр
 
             li.filters__item.filters__item_active
-                h4.filters_title Цена
+                h4.filters__title Цена
                 .filters__inner.filters__inner_active
                     .price
                         .price__range
@@ -47,67 +34,23 @@ aside.sidebar
                             .price__range-to до
                                 input(type='text', name='price[to]', class='price__range-input', value='11000', placeholder='')
                         .price__slider(data-min='0' data-max='29300')
-                            //.price__slider-range
 
             li.filters__item.filters__item_active
-                h4.filters_title Цвет
+                h4.filters__title Цвет
                 .filters__inner.filters__inner_active
-                    ul.color__list
-                        li.color__item
-                            input(type='checkbox', id='color_1', name='color[android]').sidebar__checkbox
-                            label(for='color_1', class='color__label color__label_white')
-                        li.color__item
-                            input(type='checkbox', id='color_2', name='color[ios]', checked='checked').sidebar__checkbox
-                            label(for='color_2', class='color__label color__label_grey')
-                        li.color__item
-                            input(type='checkbox', id='color_3', name='color[windows]').sidebar__checkbox
-                            label(for='color_3', class='color__label color__label_black')
-                        li.color__item
-                            input(type='checkbox', id='color_4', name='color[symbian]').sidebar__checkbox
-                            label(for='color_4', class='color__label color__label_darkblue')
-                        li.color__item
-                            input(type='checkbox', id='color_5', name='color[custom]').sidebar__checkbox
-                            label(for='color_5', class='color__label color__label_red')
-                        li.color__item
-                            input(type='checkbox', id='color_6', name='color[custom]').sidebar__checkbox
-                            label(for='color_6', class='color__label color__label_yellow')
-                        li.color__item
-                            input(type='checkbox', id='color_7', name='color[custom]').sidebar__checkbox
-                            label(for='color_7', class='color__label color__label_orange')
-                        li.color__item
-                            input(type='checkbox', id='color_8', name='color[custom]').sidebar__checkbox
-                            label(for='color_8', class='color__label color__label_green')
-                        li.color__item
-                            input(type='checkbox', id='color_9', name='color[custom]').sidebar__checkbox
-                            label(for='color_9', class='color__label color__label_blue')
-                        li.color__item
-                            input(type='checkbox', id='color_10', name='color[custom]').sidebar__checkbox
-                            label(for='color_10', class='color__label color__label_purple')
-                        li.color__item
-                            input(type='checkbox', id='color_11', name='color[custom]').sidebar__checkbox
-                            label(for='color_11', class='color__label color__label_pink')
-                        li.color__item
-                            input(type='checkbox', id='color_12', name='color[custom]').sidebar__checkbox
-                            label(for='color_12', class='color__label color__label_brown')
+                    ul.colors
+                        each color, index in ['white', 'grey', 'black', 'darkblue', 'red', 'yellow', 'orange', 'green', 'blue', 'purple', 'pink', 'brown']
+                            li.colors__item
+                                input(type='checkbox', id='color_#{index}', name='colors[]', value='#{color}' checked=index == 1).sidebar__checkbox
+                                label(for='color_#{index}', class='colors__label', style='background-color: #{color}')
 
             li.filters__item.filters__item_active
-                h4.filters_title Операционные системы
+                h4.filters__title Операционные системы
                 .filters__inner.filters__inner_active
                     ul.sidebar__list
-                        li.sidebar__item
-                            input(type='checkbox', id='os_1', name='os[android]', checked='checked').sidebar__checkbox
-                            label(for='os_1', class='sidebar__label sidebar__label_checkbox') Android
-                        li.sidebar__item
-                            input(type='checkbox', id='os_2', name='os[ios]', checked='checked').sidebar__checkbox
-                            label(for='os_2', class='sidebar__label sidebar__label_checkbox') iOS
-                        li.sidebar__item
-                            input(type='checkbox', id='os_3', name='os[windows]', checked='checked').sidebar__checkbox
-                            label(for='os_3', class='sidebar__label sidebar__label_checkbox') Windows Mobile
-                        li.sidebar__item
-                            input(type='checkbox', id='os_4', name='os[symbian]').sidebar__checkbox
-                            label(for='os_4', class='sidebar__label sidebar__label_checkbox') Symbian
-                        li.sidebar__item
-                            input(type='checkbox', id='os_5', name='os[custom]').sidebar__checkbox
-                            label(for='os_5', class='sidebar__label sidebar__label_checkbox') Custom
+                        each item, index in ['Android', 'iOS', 'Windows Mobile', 'Symbian', 'Custom']
+                            li.sidebar__item
+                                input(type='checkbox', id='os_#{index}', name='os[]', value='#{item}' checked=(index == 0 || index == 1 || index == 2)).sidebar__checkbox
+                                label(for='os_#{index}', class='sidebar__label sidebar__label_checkbox') #{item}
 
                     a(href='#').filters__reset Сбросить фильтр

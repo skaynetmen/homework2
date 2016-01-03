@@ -1,0 +1,34 @@
+.nav {
+  height: 54px;
+  min-width: $container-width + 20;
+  margin-bottom: 27px;
+  background-color: #ffffff;
+  border-bottom: 2px solid #ebedef;
+
+  line-height: 52px;
+}
+
+.nav__list {
+  @include inlineList(16px);
+}
+
+.nav__link {
+  display: block;
+  padding: 0 16px;
+
+  color: $color;
+  text-decoration: none;
+
+  &:hover {
+    background: #e4e2e2;
+  }
+}
+
+.nav__item_active > .nav__link {
+  background: $orange;
+  background: -moz-linear-gradient(top, #ff6600 0%, #ff6a1b 45%, #ff6e35 99%);
+  background: -webkit-linear-gradient(top, #ff6600 0%, #ff6a1b 45%, #ff6e35 99%);
+  background: linear-gradient(to bottom, #ff6600 0%, #ff6a1b 45%, #ff6e35 99%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff6600', endColorstr='#ff6e35', GradientType=0);
+  color: #ffffff;
+}

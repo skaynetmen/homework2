@@ -18,7 +18,7 @@ var APP = (function ($) {
                 classMod = 'catalog_default';
             }
 
-            if ($that.hasClass('view-type__link_tiel')) {
+            if ($that.hasClass('view-type__link_teil')) {
                 classMod = 'catalog_teil';
             }
 
@@ -53,7 +53,7 @@ var APP = (function ($) {
     };
 
     var filters = function () {
-        $('.filters_title').on('click', function () {
+        $('.filters__title').on('click', function () {
             var $that = $(this),
                 $item = $that.closest('.filters__item');
 
@@ -67,20 +67,20 @@ var APP = (function ($) {
     };
 
     var thumbnail = function () {
-        $('.position-img__link').on('click', function (e) {
+        $('.slideshow__link').on('click', function (e) {
             e.preventDefault();
 
             var $that = $(this);
 
             $that
-                .closest('.position-img__item')
-                .addClass('position-img__item_active')
+                .closest('.slideshow__item')
+                .addClass('slideshow__item_active')
                 .siblings()
-                .removeClass('position-img__item_active');
+                .removeClass('slideshow__item_active');
 
             $that
-                .closest('.position__imgs')
-                .find('.position-img .img')
+                .closest('.slideshow')
+                .find('.slideshow__preview .slideshow__img')
                 .attr('src', $that.attr('href'));
         });
     };
@@ -122,6 +122,22 @@ var APP = (function ($) {
         //$priceSlider.slider('values', 1, $priceTo.val() || 1000);
     };
 
+    var stars = function () {
+        $('.stars').each(function () {
+            var $that = $(this),
+                rating = parseInt($that.data('value'));
+
+            $that
+                .find('.stars__item')
+                .removeClass('stars__item_active')
+                .each(function (i) {
+                    if (i < rating) {
+                        $(this).addClass('stars__item_active');
+                    }
+                });
+        });
+    };
+
 
     return {
         init: function () {
@@ -132,6 +148,7 @@ var APP = (function ($) {
             selector();
             columnizer();
             slider();
+            stars();
         },
         setSliderRangeMin: function (value) {
             if (!isNaN(value)) {
@@ -162,6 +179,9 @@ var APP = (function ($) {
             }
 
             return value;
+        },
+        refreshRating: function () {
+            stars();
         }
     };
 })(jQuery);

@@ -8,7 +8,7 @@ html(class='no-js', lang='ru-RU')
         block title
             title Homework#2
         meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
-        meta(name='viewport', content='width=1100')
+        meta(name='viewport', content='width=1120')
         meta(name='description', content='')
         meta(name='keywords', content='')
         meta(name='author', content='')
@@ -26,31 +26,34 @@ html(class='no-js', lang='ru-RU')
         link(rel="icon", type='image/png', sizes="96x96", href="favicon-96x96.png")
         link(rel="icon", type='image/png', sizes="32x32", href="favicon-32x32.png")
         link(rel="icon", type='image/png', sizes="16x16", href="favicon.png")
-        //build:css main.min.css
+        //build:css css/main.min.css
         link(rel="stylesheet", href="bower/normalize.css/normalize.css")
-        link(rel="stylesheet", href="bower/select2/dist/css/select2.min.css")
+        link(rel="stylesheet", href="bower/select2/dist/css/select2.css")
         link(rel="stylesheet", href="css/main.css")
         //endbuild
     body
         .wrapper
             include ../partials/header
 
+            block breadcrumbs
+                include ../partials/breadcrumbs
+
             main.main
                 .container
                     block content
 
-            block info
+            block bottom-content
                 include ../partials/info
 
         include ../partials/footer
 
-        //build:js main.min.js
-        script(src='bower/jquery/dist/jquery.min.js')
-        script(src='bower/select2/dist/js/select2.min.js')
+        //build:js js/main.min.js
+        script(src='bower/jquery/dist/jquery.js')
+        script(src='bower/select2/dist/js/select2.js')
         script(src='bower/jquery-ui/ui/core.js')
         script(src='bower/jquery-ui/ui/widget.js')
         script(src='bower/jquery-ui/ui/mouse.js')
         script(src='bower/jquery-ui/ui/slider.js')
-        script(src='bower/jquery.columnizer/src/jquery.columnizer.min.js')
+        script(src='bower/jquery.columnizer/src/jquery.columnizer.js')
         script(src='js/main.js')
         //endbuild

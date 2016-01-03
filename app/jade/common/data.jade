@@ -1,10 +1,48 @@
-- var socialsLinks = [ {link: '#', text: 'facebook', className: 'socials__link_facebook'}, {link: '#', text: 'vk', className: 'socials__link_vk'}, {link: '#', text: 'twitter', className: 'socials__link_twitter'} ]
-- var fastLinks = [ {link: '#', text: 'Карта проезда'}, {link: '#', text: 'История заказов'}, {link: '#', text: 'Корзина'} ]
-- var navLinks = [ {link: '#', text: 'Планшеты'}, {link: '#', text: 'Мобильные телефоны'}, {link: '#', text: 'Mp3 плееры'}, {link: '#', text: 'Персональные компьютеры'}, {link: '#', text: 'Ноутбуки'}, {link: '#', text: 'Аксессуары'}, {link: '#', text: 'Бытовая техника'} ]
-- var viewLinks = [{link: '#', text: 'Список с фото', className: 'view-type__link_photo-list'}, {link: '#', text: 'Плиткой', className: 'view-type__link_tiel'}, {link: '#', text: 'Список без фото', className: 'view-type__link_list'}]
 -
     var
-        footerSocialsLinks = [
-            {link: '#', text: 'facebook', className: 'footer-socials__link_facebook'},
-            {link: '#', text: 'vk', className: 'footer-socials__link_vk'},
-            {link: '#', text: 'twitter', className: 'footer-socials__link_twitter'} ]
+    socialsLinks = [
+    {link: '#', text: 'facebook', mod: 'facebook', blank: true},
+    {link: '#', text: 'vk', mod: 'vk', blank: true},
+    {link: '#', text: 'twitter', mod: 'twitter', blank: true}
+    ]
+
+- var fastLinks = ['Карта проезда', 'История заказов', 'Корзина']
+
+- var navLinks = ['Планшеты', 'Мобильные телефоны', 'Mp3 плееры', 'Персональные компьютеры', 'Ноутбуки', 'Аксессуары', 'Бытовая техника']
+
+- var breadCrumbs = ['Главная']
+
+-
+    var
+    viewLinks = [
+    {link: '#', text: 'Список с фото', mod: 'photo-list'},
+    {link: '#', text: 'Плиткой', mod: 'teil'},
+    {link: '#', text: 'Список без фото', mod: 'list'}
+    ]
+
+-
+    var
+    positionParams = [
+    {param: 'Тип SIM-карты', value: 'Micro-SIM'},
+    {param: 'Количество SIM-карт', value: '1'},
+    {param: 'Цвет', value: 'Белый'},
+    {param: 'ОС', value: 'Android'},
+    {param: 'Связь 3G', value: 'Есть'},
+    {param: '4G (LTE)', value: 'Есть'},
+    {param: 'GPS-модуль', value: 'Есть'}
+    ]
+
+-
+    var
+    paginationList = [
+    {link: '#', text: '&#xf104;', mod: 'isAwesome'},
+    {link: '#', text: '1'},
+    {link: '#', text: '2'},
+    {link: '#', text: '3'},
+    {link: '#', text: '&#xf105;', mod: 'isAwesome'}
+    ]
+
+
+- var footerCategory = ['Планшеты', 'Мобильные телефоны', 'Mp3 плееры']
+
+- var footerCategory2 = ['Персональные компьютеры', 'Ноутбуки', 'Аксессуары', 'Бытовая техника']

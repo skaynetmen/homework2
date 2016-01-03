@@ -35,7 +35,7 @@
     width: 17%;
   }
 
-  .position__imgs,
+  .slideshow,
   .position__desc,
   .position__rating {
     display: none;
@@ -82,7 +82,7 @@
   }
 
   .position__price {
-    display: table-cell;
+    display: block;
     width: (100%/3);
     //float: left;
     margin-bottom: 0;

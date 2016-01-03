@@ -7,13 +7,10 @@ section.content
                     option По цене
                     option По наличию
                     option По понтовости
-                //.view-sort__btn по цене
-                //- var selectList = [{link: '#', text: 'по цене'}, {link: '#', text: 'по наличию'}]
-                //+ulList('view-sort__list', 'view-sort__item', 'view-sort__link', selectList)
 
         .view-type
             span.view__label Вид каталога
-            +ulList('view-type__list', 'view-type__item', 'view-type__link', viewLinks, 1)
+            +list('view-type', viewLinks, '', 1)
 
     .catalog.catalog_teil
         ul.catalog__list
@@ -22,19 +19,14 @@ section.content
                 li.catalog__item
                     .position
                         .position__header
-                            .position__imgs
-                                .position-img
-                                    img(src='uploads/catalog/samsung.jpg', alt='samsung', class='img')
-                                ul.position-img__list
-                                    li.position-img__item.position-img__item_active
-                                        a(href='uploads/catalog/samsung.jpg', class='position-img__link')
-                                            img(src='uploads/catalog/samsung_1.jpg', alt='samsung', class='img')
-                                    li.position-img__item
-                                        a(href='http://lorempixel.com/200/200/technics/', class='position-img__link')
-                                            img(src='uploads/catalog/samsung_2.jpg', alt='samsung', class='img')
-                                    li.position-img__item
-                                        a(href='http://lorempixel.com/200/200/technics/1', class='position-img__link')
-                                            img(src='uploads/catalog/samsung_3.jpg', alt='samsung', class='img')
+                            .slideshow
+                                .slideshow__preview
+                                    img(src='uploads/catalog/samsung.jpg', alt='samsung', class='img slideshow__img')
+                                ul.slideshow__list
+                                    each item, index in [1, 2, 3]
+                                        li(class='slideshow__item' + (index == 0 ? ' slideshow__item_active' : ''))
+                                            a(href='http://lorempixel.com/200/200/technics/#{index}', class='slideshow__link')
+                                                img(src='http://lorempixel.com/50/50/technics/#{index}', alt='samsung', class='img slideshow__img')
                             .position__code
                                 span.position__code-title Артикул
                                 span.position__code-value 189238
@@ -45,40 +37,16 @@ section.content
                             p.position__desc Смартфон Samsung GT-I9301I GALAXY S 3 Ceramic White Моноблок, Micro-SIM, Android 4.4, 3G, Bluetooth 4.0, EDGE, GPRS, WAP, Wi-Fi, Количество ядер процессора 4, Частота процессора 1400 МГц...
 
                             ul.position__list
-                                li.position__item
-                                    | Тип SIM-карты
-                                    span.position__param Micro-SIM
-                                li.position__item
-                                    | Количество SIM-карт
-                                    span.position__param 1
-                                li.position__item
-                                    | Цвет
-                                    span.position__param Белый
-                                li.position__item
-                                    | ОС
-                                    span.position__param Android
-                                li.position__item
-                                    | Связь 3G
-                                    span.position__param Есть
-                                li.position__item
-                                    | 4G (LTE)
-                                    span.position__param Нет
-                                li.position__item
-                                    | GPS-модуль
-                                    span.position__param Есть
+                                each item, index in positionParams
+                                    li.position__item #{item.param}
+                                        span.position__param #{item.value}
 
                             .position__rating
-                                ul.position__rating-stars__list
-                                    li.position__rating-stars__item.position__rating-stars__item_active
-                                        a(href='#', class='position__rating-stars__link') *
-                                    li.position__rating-stars__item.position__rating-stars__item_active
-                                        a(href='#', class='position__rating-stars__link') *
-                                    li.position__rating-stars__item.position__rating-stars__item_active
-                                        a(href='#', class='position__rating-stars__link') *
-                                    li.position__rating-stars__item.position__rating-stars__item_active
-                                        a(href='#', class='position__rating-stars__link') *
-                                    li.position__rating-stars__item
-                                        a(href='#', class='position__rating-stars__link') *
+                                ul(data-value='4').stars
+                                    each item, index in [1, 2, 3, 4, 5]
+                                        li.stars__item
+                                            a(href='#', class='stars__link') *
+
                                 span.position__rating-value 4
 
                         .position__footer
@@ -92,13 +60,4 @@ section.content
                 - i++
 
         .pagination
-            -
-                var
-                paginationList = [
-                {link: '#', text: '&#xf104;', className: 'isAwesome'},
-                {link: '#', text: '1'},
-                {link: '#', text: '2'},
-                {link: '#', text: '3'},
-                {link: '#', text: '&#xf105;', className: 'isAwesome'}
-                ]
-            +ulList('pagination__list', 'pagination__item', 'pagination__link', paginationList, 1)
+            +list('pagination', paginationList, '', 1)

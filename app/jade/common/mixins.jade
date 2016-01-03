@@ -1,15 +1,10 @@
-mixin ulList(listClass, itemClass, linkClass, items, indexActive)
-    ul(class=listClass)
+mixin list(baseClass, items, mod, indexActive)
+    ul(class='#{baseClass}__list' + (mod ? ' #{baseClass}__list_#{mod}' : ''))
         each item, index in items
-            if index == indexActive
-                li(class=itemClass + ' ' + itemClass + '_active')
-                    if item.className
-                        a(href=item.link, class=linkClass + ' ' + item.className) !{item.text}
-                    else
-                        a(href=item.link, class=linkClass) !{item.text}
+            if typeof(item) === 'object'
+                li(class='#{baseClass}__item' + (index == indexActive ? ' #{baseClass}__item_active' : ''))
+                    a(href=item.link class='#{baseClass}__link' + (item.mod ? ' #{baseClass}__link_#{item.mod}' : ''))&attributes(item.blank ? {'target': '_blank'} : {})
+                        | !{item.text}
             else
-                li(class=itemClass)
-                    if item.className
-                        a(href=item.link, class=linkClass + ' ' + item.className) !{item.text}
-                    else
-                        a(href=item.link, class=linkClass) !{item.text}
+                li(class='#{baseClass}__item' + (index == indexActive ? ' #{baseClass}__item_active' : ''))
+                    a(href='#', class='#{baseClass}__link') !{item}

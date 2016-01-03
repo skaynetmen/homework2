@@ -1,0 +1,35 @@
+.breadcrumbs {
+  margin-bottom: 20px;
+}
+
+.breadcrumbs__list {
+  @include inlineList();
+}
+
+.breadcrumbs__item {
+  margin-left: 0.2em;
+
+  &:first-child {
+    margin-left: 0;
+  }
+
+  &:before {
+    content: '>';
+    margin-right: 0.2em;
+  }
+
+  &:first-child:before {
+    content: '';
+    margin-right: 0;
+  }
+}
+
+.breadcrumbs__link {
+  color: $color;
+  text-decoration: none;
+
+  &:hover {
+    color: $orange;
+    text-decoration: underline;
+  }
+}
